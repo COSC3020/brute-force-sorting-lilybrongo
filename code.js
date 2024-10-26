@@ -17,6 +17,10 @@ function permutationSort(array, temp = [], count = 0, totalLength = array.length
 
             // Check if the current permutation is sorted
             if (isSortedArray(temp)) {
+                // Copy the sorted permutation to the original array
+                for (let j = 0; j < totalLength; j++) {
+                    array[j] = temp[j];
+                }
                 return count;
             }
         }
@@ -34,3 +38,5 @@ function isSortedArray(array) {
     }
     return true;
 }
+
+module.exports = { permutationSort };
