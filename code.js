@@ -11,13 +11,11 @@ function permutationSort(array, temp = [], count = 0, totalLength = array.length
         // Recursively call permutationSort with the remaining elements
         count = permutationSort(array.slice(0, i).concat(array.slice(i + 1)), temp, count, totalLength);
 
-        // Check if the temporary array has reached the length of the original array
         if (temp.length === totalLength) {
             count++;
 
             // Check if the current permutation is sorted
             if (isSortedArray(temp)) {
-                // Copy the sorted permutation to the original array
                 for (let j = 0; j < totalLength; j++) {
                     array[j] = temp[j];
                 }
@@ -38,5 +36,3 @@ function isSortedArray(array) {
     }
     return true;
 }
-
-module.exports = { permutationSort };
